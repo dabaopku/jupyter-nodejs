@@ -5,7 +5,7 @@ export default function (ctx, args, done) {
     block: {
       coffee: {
         transform(ctx, args, code, out, done) {
-          const opts = { }
+          const opts = {bare: true}
           try {
             code = coffee.compile(code, opts)
           } catch (err) {
