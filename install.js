@@ -3,7 +3,7 @@ var fs = require('fs')
 var path = require('path')
 var mkdirp = require('mkdirp')
 
-var installPath = path.join(process.env.HOME, '.ipython/kernels/nodejs')
+var installPath = path.join(process.env.HOME, '.ipython/kernels/coffee')
 if (process.argv >= 3) {
   installPath = process.argv[2]
 }
@@ -14,7 +14,7 @@ mkdirp(fullPath)
 
 fs.writeFileSync(path.join(fullPath, 'kernel.json'), JSON.stringify({
   argv: ['node', path.join(path.resolve(__dirname), 'build', 'run.js'), '{connection_file}'],
-  display_name: 'NodeJS',
-  language: 'javascript',
+  display_name: 'CoffeeScript',
+  language: 'CoffeeScript',
 }, null, 2))
 
